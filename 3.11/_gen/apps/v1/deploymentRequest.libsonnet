@@ -1,0 +1,21 @@
+{
+  local d = (import 'doc-util/main.libsonnet'),
+  '#':: d.pkg(name='deploymentRequest', url='', help='"DeploymentRequest is a request to a deployment config for a new deployment."'),
+  '#new':: d.fn(help='new returns an instance of DeploymentRequest', args=[d.arg(name='name', type=d.T.string)]),
+  new(name): {
+    apiVersion: 'apps.openshift.io/v1',
+    kind: 'DeploymentRequest',
+  } + self.metadata.withName(name=name),
+  '#withExcludeTriggers':: d.fn(help='"ExcludeTriggers instructs the instantiator to avoid processing the specified triggers. This field overrides the triggers from latest and allows clients to control specific logic. This field is ignored if not specified."', args=[d.arg(name='excludeTriggers', type=d.T.array)]),
+  withExcludeTriggers(excludeTriggers): { excludeTriggers: if std.isArray(v=excludeTriggers) then excludeTriggers else [excludeTriggers] },
+  '#withExcludeTriggersMixin':: d.fn(help='"ExcludeTriggers instructs the instantiator to avoid processing the specified triggers. This field overrides the triggers from latest and allows clients to control specific logic. This field is ignored if not specified."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='excludeTriggers', type=d.T.array)]),
+  withExcludeTriggersMixin(excludeTriggers): { excludeTriggers+: if std.isArray(v=excludeTriggers) then excludeTriggers else [excludeTriggers] },
+  '#withForce':: d.fn(help='"Force will try to force a new deployment to run. If the deployment config is paused, then setting this to true will return an Invalid error."', args=[d.arg(name='force', type=d.T.boolean)]),
+  withForce(force): { force: force },
+  '#withLatest':: d.fn(help='"Latest will update the deployment config with the latest state from all triggers."', args=[d.arg(name='latest', type=d.T.boolean)]),
+  withLatest(latest): { latest: latest },
+  '#withName':: d.fn(help='"Name of the deployment config for requesting a new deployment."', args=[d.arg(name='name', type=d.T.string)]),
+  withName(name): { name: name },
+  '#mixin': 'ignore',
+  mixin: self,
+}

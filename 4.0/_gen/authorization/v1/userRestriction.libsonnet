@@ -1,0 +1,18 @@
+{
+  local d = (import 'doc-util/main.libsonnet'),
+  '#':: d.pkg(name='userRestriction', url='', help='"UserRestriction matches a user either by a string match on the user name, a string match on the name of a group to which the user belongs, or a label selector applied to the user labels."'),
+  '#withGroups':: d.fn(help='"Groups specifies a list of literal group names."', args=[d.arg(name='groups', type=d.T.array)]),
+  withGroups(groups): { groups: if std.isArray(v=groups) then groups else [groups] },
+  '#withGroupsMixin':: d.fn(help='"Groups specifies a list of literal group names."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='groups', type=d.T.array)]),
+  withGroupsMixin(groups): { groups+: if std.isArray(v=groups) then groups else [groups] },
+  '#withLabels':: d.fn(help='"Selectors specifies a list of label selectors over user labels."', args=[d.arg(name='labels', type=d.T.array)]),
+  withLabels(labels): { labels: if std.isArray(v=labels) then labels else [labels] },
+  '#withLabelsMixin':: d.fn(help='"Selectors specifies a list of label selectors over user labels."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='labels', type=d.T.array)]),
+  withLabelsMixin(labels): { labels+: if std.isArray(v=labels) then labels else [labels] },
+  '#withUsers':: d.fn(help='"Users specifies a list of literal user names."', args=[d.arg(name='users', type=d.T.array)]),
+  withUsers(users): { users: if std.isArray(v=users) then users else [users] },
+  '#withUsersMixin':: d.fn(help='"Users specifies a list of literal user names."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='users', type=d.T.array)]),
+  withUsersMixin(users): { users+: if std.isArray(v=users) then users else [users] },
+  '#mixin': 'ignore',
+  mixin: self,
+}

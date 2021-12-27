@@ -1,0 +1,21 @@
+{
+  local d = (import 'doc-util/main.libsonnet'),
+  '#':: d.pkg(name='clusterResourceQuotaSelector', url='', help='"ClusterResourceQuotaSelector is used to select projects.  At least one of LabelSelector or AnnotationSelector must present.  If only one is present, it is the only selection criteria.  If both are specified, the project must match both restrictions."'),
+  '#labels':: d.obj(help='"A label selector is a label query over a set of resources. The result of matchLabels and matchExpressions are ANDed. An empty label selector matches all objects. A null label selector matches no objects."'),
+  labels: {
+    '#withMatchExpressions':: d.fn(help='"matchExpressions is a list of label selector requirements. The requirements are ANDed."', args=[d.arg(name='matchExpressions', type=d.T.array)]),
+    withMatchExpressions(matchExpressions): { labels+: { matchExpressions: if std.isArray(v=matchExpressions) then matchExpressions else [matchExpressions] } },
+    '#withMatchExpressionsMixin':: d.fn(help='"matchExpressions is a list of label selector requirements. The requirements are ANDed."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='matchExpressions', type=d.T.array)]),
+    withMatchExpressionsMixin(matchExpressions): { labels+: { matchExpressions+: if std.isArray(v=matchExpressions) then matchExpressions else [matchExpressions] } },
+    '#withMatchLabels':: d.fn(help='"matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \\"key\\", the operator is \\"In\\", and the values array contains only \\"value\\". The requirements are ANDed."', args=[d.arg(name='matchLabels', type=d.T.object)]),
+    withMatchLabels(matchLabels): { labels+: { matchLabels: matchLabels } },
+    '#withMatchLabelsMixin':: d.fn(help='"matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \\"key\\", the operator is \\"In\\", and the values array contains only \\"value\\". The requirements are ANDed."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='matchLabels', type=d.T.object)]),
+    withMatchLabelsMixin(matchLabels): { labels+: { matchLabels+: matchLabels } },
+  },
+  '#withAnnotations':: d.fn(help='"AnnotationSelector is used to select projects by annotation."', args=[d.arg(name='annotations', type=d.T.object)]),
+  withAnnotations(annotations): { annotations: annotations },
+  '#withAnnotationsMixin':: d.fn(help='"AnnotationSelector is used to select projects by annotation."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='annotations', type=d.T.object)]),
+  withAnnotationsMixin(annotations): { annotations+: annotations },
+  '#mixin': 'ignore',
+  mixin: self,
+}

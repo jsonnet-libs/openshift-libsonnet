@@ -1,0 +1,16 @@
+{
+  local d = (import 'doc-util/main.libsonnet'),
+  '#':: d.pkg(name='customDeploymentStrategyParams', url='', help='"CustomDeploymentStrategyParams are the input to the Custom deployment strategy."'),
+  '#withCommand':: d.fn(help='"Command is optional and overrides CMD in the container Image."', args=[d.arg(name='command', type=d.T.array)]),
+  withCommand(command): { command: if std.isArray(v=command) then command else [command] },
+  '#withCommandMixin':: d.fn(help='"Command is optional and overrides CMD in the container Image."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='command', type=d.T.array)]),
+  withCommandMixin(command): { command+: if std.isArray(v=command) then command else [command] },
+  '#withEnvironment':: d.fn(help='"Environment holds the environment which will be given to the container for Image."', args=[d.arg(name='environment', type=d.T.array)]),
+  withEnvironment(environment): { environment: if std.isArray(v=environment) then environment else [environment] },
+  '#withEnvironmentMixin':: d.fn(help='"Environment holds the environment which will be given to the container for Image."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='environment', type=d.T.array)]),
+  withEnvironmentMixin(environment): { environment+: if std.isArray(v=environment) then environment else [environment] },
+  '#withImage':: d.fn(help='"Image specifies a container image which can carry out a deployment."', args=[d.arg(name='image', type=d.T.string)]),
+  withImage(image): { image: image },
+  '#mixin': 'ignore',
+  mixin: self,
+}

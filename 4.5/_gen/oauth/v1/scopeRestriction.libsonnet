@@ -1,0 +1,23 @@
+{
+  local d = (import 'doc-util/main.libsonnet'),
+  '#':: d.pkg(name='scopeRestriction', url='', help='"ScopeRestriction describe one restriction on scopes.  Exactly one option must be non-nil."'),
+  '#clusterRole':: d.obj(help='"ClusterRoleScopeRestriction describes restrictions on cluster role scopes"'),
+  clusterRole: {
+    '#withAllowEscalation':: d.fn(help='"AllowEscalation indicates whether you can request roles and their escalating resources"', args=[d.arg(name='allowEscalation', type=d.T.boolean)]),
+    withAllowEscalation(allowEscalation): { clusterRole+: { allowEscalation: allowEscalation } },
+    '#withNamespaces':: d.fn(help='"Namespaces is the list of namespaces that can be referenced.  * means any of them (including *)"', args=[d.arg(name='namespaces', type=d.T.array)]),
+    withNamespaces(namespaces): { clusterRole+: { namespaces: if std.isArray(v=namespaces) then namespaces else [namespaces] } },
+    '#withNamespacesMixin':: d.fn(help='"Namespaces is the list of namespaces that can be referenced.  * means any of them (including *)"\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='namespaces', type=d.T.array)]),
+    withNamespacesMixin(namespaces): { clusterRole+: { namespaces+: if std.isArray(v=namespaces) then namespaces else [namespaces] } },
+    '#withRoleNames':: d.fn(help='"RoleNames is the list of cluster roles that can referenced.  * means anything"', args=[d.arg(name='roleNames', type=d.T.array)]),
+    withRoleNames(roleNames): { clusterRole+: { roleNames: if std.isArray(v=roleNames) then roleNames else [roleNames] } },
+    '#withRoleNamesMixin':: d.fn(help='"RoleNames is the list of cluster roles that can referenced.  * means anything"\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='roleNames', type=d.T.array)]),
+    withRoleNamesMixin(roleNames): { clusterRole+: { roleNames+: if std.isArray(v=roleNames) then roleNames else [roleNames] } },
+  },
+  '#withLiterals':: d.fn(help='"ExactValues means the scope has to match a particular set of strings exactly"', args=[d.arg(name='literals', type=d.T.array)]),
+  withLiterals(literals): { literals: if std.isArray(v=literals) then literals else [literals] },
+  '#withLiteralsMixin':: d.fn(help='"ExactValues means the scope has to match a particular set of strings exactly"\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='literals', type=d.T.array)]),
+  withLiteralsMixin(literals): { literals+: if std.isArray(v=literals) then literals else [literals] },
+  '#mixin': 'ignore',
+  mixin: self,
+}

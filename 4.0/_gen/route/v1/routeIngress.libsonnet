@@ -1,0 +1,18 @@
+{
+  local d = (import 'doc-util/main.libsonnet'),
+  '#':: d.pkg(name='routeIngress', url='', help='"RouteIngress holds information about the places where a route is exposed."'),
+  '#withConditions':: d.fn(help='"Conditions is the state of the route, may be empty."', args=[d.arg(name='conditions', type=d.T.array)]),
+  withConditions(conditions): { conditions: if std.isArray(v=conditions) then conditions else [conditions] },
+  '#withConditionsMixin':: d.fn(help='"Conditions is the state of the route, may be empty."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='conditions', type=d.T.array)]),
+  withConditionsMixin(conditions): { conditions+: if std.isArray(v=conditions) then conditions else [conditions] },
+  '#withHost':: d.fn(help='"Host is the host string under which the route is exposed; this value is required"', args=[d.arg(name='host', type=d.T.string)]),
+  withHost(host): { host: host },
+  '#withRouterCanonicalHostname':: d.fn(help='"CanonicalHostname is the external host name for the router that can be used as a CNAME for the host requested for this route. This value is optional and may not be set in all cases."', args=[d.arg(name='routerCanonicalHostname', type=d.T.string)]),
+  withRouterCanonicalHostname(routerCanonicalHostname): { routerCanonicalHostname: routerCanonicalHostname },
+  '#withRouterName':: d.fn(help='"Name is a name chosen by the router to identify itself; this value is required"', args=[d.arg(name='routerName', type=d.T.string)]),
+  withRouterName(routerName): { routerName: routerName },
+  '#withWildcardPolicy':: d.fn(help='"Wildcard policy is the wildcard policy that was allowed where this route is exposed."', args=[d.arg(name='wildcardPolicy', type=d.T.string)]),
+  withWildcardPolicy(wildcardPolicy): { wildcardPolicy: wildcardPolicy },
+  '#mixin': 'ignore',
+  mixin: self,
+}

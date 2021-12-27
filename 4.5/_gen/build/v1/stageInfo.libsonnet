@@ -1,0 +1,16 @@
+{
+  local d = (import 'doc-util/main.libsonnet'),
+  '#':: d.pkg(name='stageInfo', url='', help='"StageInfo contains details about a build stage."'),
+  '#withDurationMilliseconds':: d.fn(help='"durationMilliseconds identifies how long the stage took to complete in milliseconds. Note: the duration of a stage can exceed the sum of the duration of the steps within the stage as not all actions are accounted for in explicit build steps."', args=[d.arg(name='durationMilliseconds', type=d.T.integer)]),
+  withDurationMilliseconds(durationMilliseconds): { durationMilliseconds: durationMilliseconds },
+  '#withName':: d.fn(help='"name is a unique identifier for each build stage that occurs."', args=[d.arg(name='name', type=d.T.string)]),
+  withName(name): { name: name },
+  '#withStartTime':: d.fn(help='', args=[d.arg(name='startTime', type=d.T.string)]),
+  withStartTime(startTime): { startTime: startTime },
+  '#withSteps':: d.fn(help='"steps contains details about each step that occurs during a build stage including start time and duration in milliseconds."', args=[d.arg(name='steps', type=d.T.array)]),
+  withSteps(steps): { steps: if std.isArray(v=steps) then steps else [steps] },
+  '#withStepsMixin':: d.fn(help='"steps contains details about each step that occurs during a build stage including start time and duration in milliseconds."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='steps', type=d.T.array)]),
+  withStepsMixin(steps): { steps+: if std.isArray(v=steps) then steps else [steps] },
+  '#mixin': 'ignore',
+  mixin: self,
+}

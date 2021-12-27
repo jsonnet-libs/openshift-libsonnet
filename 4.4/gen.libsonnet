@@ -1,0 +1,16 @@
+{
+  local d = (import 'doc-util/main.libsonnet'),
+  '#':: d.pkg(name='o', url='github.com/jsonnet-libs/openshift-libsonnet/4.4/main.libsonnet', help='Generated Jsonnet library for OpenShift v4.4'),
+  apps:: (import '_gen/apps/main.libsonnet'),
+  authorization:: (import '_gen/authorization/main.libsonnet'),
+  build:: (import '_gen/build/main.libsonnet'),
+  image:: (import '_gen/image/main.libsonnet'),
+  network:: (import '_gen/network/main.libsonnet'),
+  oauth:: (import '_gen/oauth/main.libsonnet'),
+  project:: (import '_gen/project/main.libsonnet'),
+  quota:: (import '_gen/quota/main.libsonnet'),
+  route:: (import '_gen/route/main.libsonnet'),
+  security:: (import '_gen/security/main.libsonnet'),
+  template:: (import '_gen/template/main.libsonnet'),
+  user:: (import '_gen/user/main.libsonnet'),
+}

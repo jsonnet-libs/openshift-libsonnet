@@ -1,0 +1,16 @@
+{
+  local d = (import 'doc-util/main.libsonnet'),
+  '#':: d.pkg(name='clusterRoleScopeRestriction', url='', help='"ClusterRoleScopeRestriction describes restrictions on cluster role scopes"'),
+  '#withAllowEscalation':: d.fn(help='"AllowEscalation indicates whether you can request roles and their escalating resources"', args=[d.arg(name='allowEscalation', type=d.T.boolean)]),
+  withAllowEscalation(allowEscalation): { allowEscalation: allowEscalation },
+  '#withNamespaces':: d.fn(help='"Namespaces is the list of namespaces that can be referenced.  * means any of them (including *)"', args=[d.arg(name='namespaces', type=d.T.array)]),
+  withNamespaces(namespaces): { namespaces: if std.isArray(v=namespaces) then namespaces else [namespaces] },
+  '#withNamespacesMixin':: d.fn(help='"Namespaces is the list of namespaces that can be referenced.  * means any of them (including *)"\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='namespaces', type=d.T.array)]),
+  withNamespacesMixin(namespaces): { namespaces+: if std.isArray(v=namespaces) then namespaces else [namespaces] },
+  '#withRoleNames':: d.fn(help='"RoleNames is the list of cluster roles that can referenced.  * means anything"', args=[d.arg(name='roleNames', type=d.T.array)]),
+  withRoleNames(roleNames): { roleNames: if std.isArray(v=roleNames) then roleNames else [roleNames] },
+  '#withRoleNamesMixin':: d.fn(help='"RoleNames is the list of cluster roles that can referenced.  * means anything"\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='roleNames', type=d.T.array)]),
+  withRoleNamesMixin(roleNames): { roleNames+: if std.isArray(v=roleNames) then roleNames else [roleNames] },
+  '#mixin': 'ignore',
+  mixin: self,
+}

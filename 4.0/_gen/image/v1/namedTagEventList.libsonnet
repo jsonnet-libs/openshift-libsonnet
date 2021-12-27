@@ -1,0 +1,16 @@
+{
+  local d = (import 'doc-util/main.libsonnet'),
+  '#':: d.pkg(name='namedTagEventList', url='', help='"NamedTagEventList relates a tag to its image history."'),
+  '#withConditions':: d.fn(help='"Conditions is an array of conditions that apply to the tag event list."', args=[d.arg(name='conditions', type=d.T.array)]),
+  withConditions(conditions): { conditions: if std.isArray(v=conditions) then conditions else [conditions] },
+  '#withConditionsMixin':: d.fn(help='"Conditions is an array of conditions that apply to the tag event list."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='conditions', type=d.T.array)]),
+  withConditionsMixin(conditions): { conditions+: if std.isArray(v=conditions) then conditions else [conditions] },
+  '#withItems':: d.fn(help="\"Standard object's metadata.\"", args=[d.arg(name='items', type=d.T.array)]),
+  withItems(items): { items: if std.isArray(v=items) then items else [items] },
+  '#withItemsMixin':: d.fn(help="\"Standard object's metadata.\"\n\n**Note:** This function appends passed data to existing values", args=[d.arg(name='items', type=d.T.array)]),
+  withItemsMixin(items): { items+: if std.isArray(v=items) then items else [items] },
+  '#withTag':: d.fn(help='"Tag is the tag for which the history is recorded"', args=[d.arg(name='tag', type=d.T.string)]),
+  withTag(tag): { tag: tag },
+  '#mixin': 'ignore',
+  mixin: self,
+}

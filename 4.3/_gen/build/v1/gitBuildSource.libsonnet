@@ -1,0 +1,16 @@
+{
+  local d = (import 'doc-util/main.libsonnet'),
+  '#':: d.pkg(name='gitBuildSource', url='', help='"GitBuildSource defines the parameters of a Git SCM"'),
+  '#withHttpProxy':: d.fn(help='"httpProxy is a proxy used to reach the git repository over http"', args=[d.arg(name='httpProxy', type=d.T.string)]),
+  withHttpProxy(httpProxy): { httpProxy: httpProxy },
+  '#withHttpsProxy':: d.fn(help='"httpsProxy is a proxy used to reach the git repository over https"', args=[d.arg(name='httpsProxy', type=d.T.string)]),
+  withHttpsProxy(httpsProxy): { httpsProxy: httpsProxy },
+  '#withNoProxy':: d.fn(help='"noProxy is the list of domains for which the proxy should not be used"', args=[d.arg(name='noProxy', type=d.T.string)]),
+  withNoProxy(noProxy): { noProxy: noProxy },
+  '#withRef':: d.fn(help='"ref is the branch/tag/ref to build."', args=[d.arg(name='ref', type=d.T.string)]),
+  withRef(ref): { ref: ref },
+  '#withUri':: d.fn(help='"uri points to the source that will be built. The structure of the source will depend on the type of build to run"', args=[d.arg(name='uri', type=d.T.string)]),
+  withUri(uri): { uri: uri },
+  '#mixin': 'ignore',
+  mixin: self,
+}

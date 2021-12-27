@@ -1,0 +1,18 @@
+{
+  local d = (import 'doc-util/main.libsonnet'),
+  '#':: d.pkg(name='tlsConfig', url='', help='"TLSConfig defines config used to secure a route and provide termination"'),
+  '#withCaCertificate':: d.fn(help='"caCertificate provides the cert authority certificate contents"', args=[d.arg(name='caCertificate', type=d.T.string)]),
+  withCaCertificate(caCertificate): { caCertificate: caCertificate },
+  '#withCertificate':: d.fn(help='"certificate provides certificate contents"', args=[d.arg(name='certificate', type=d.T.string)]),
+  withCertificate(certificate): { certificate: certificate },
+  '#withDestinationCACertificate':: d.fn(help='"destinationCACertificate provides the contents of the ca certificate of the final destination.  When using reencrypt termination this file should be provided in order to have routers use it for health checks on the secure connection. If this field is not specified, the router may provide its own destination CA and perform hostname validation using the short service name (service.namespace.svc), which allows infrastructure generated certificates to automatically verify."', args=[d.arg(name='destinationCACertificate', type=d.T.string)]),
+  withDestinationCACertificate(destinationCACertificate): { destinationCACertificate: destinationCACertificate },
+  '#withInsecureEdgeTerminationPolicy':: d.fn(help='"insecureEdgeTerminationPolicy indicates the desired behavior for insecure connections to a route. While each router may make its own decisions on which ports to expose, this is normally port 80.\\n\\n* Allow - traffic is sent to the server on the insecure port (default) * Disable - no traffic is allowed on the insecure port. * Redirect - clients are redirected to the secure port."', args=[d.arg(name='insecureEdgeTerminationPolicy', type=d.T.string)]),
+  withInsecureEdgeTerminationPolicy(insecureEdgeTerminationPolicy): { insecureEdgeTerminationPolicy: insecureEdgeTerminationPolicy },
+  '#withKey':: d.fn(help='"key provides key file contents"', args=[d.arg(name='key', type=d.T.string)]),
+  withKey(key): { key: key },
+  '#withTermination':: d.fn(help='"termination indicates termination type."', args=[d.arg(name='termination', type=d.T.string)]),
+  withTermination(termination): { termination: termination },
+  '#mixin': 'ignore',
+  mixin: self,
+}
