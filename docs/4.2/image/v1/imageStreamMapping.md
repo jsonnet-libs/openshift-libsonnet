@@ -56,7 +56,6 @@ permalink: /4.2/image/v1/imageStreamMapping/
         * [`fn withMessage(message)`](#fn-imagemetadatainitializersresultwithmessage)
         * [`fn withMetadata(metadata)`](#fn-imagemetadatainitializersresultwithmetadata)
         * [`fn withReason(reason)`](#fn-imagemetadatainitializersresultwithreason)
-        * [`fn withStatus(status)`](#fn-imagemetadatainitializersresultwithstatus)
         * [`obj image.metadata.initializers.result.details`](#obj-imagemetadatainitializersresultdetails)
           * [`fn withCauses(causes)`](#fn-imagemetadatainitializersresultdetailswithcauses)
           * [`fn withCausesMixin(causes)`](#fn-imagemetadatainitializersresultdetailswithcausesmixin)
@@ -95,7 +94,6 @@ permalink: /4.2/image/v1/imageStreamMapping/
       * [`fn withMessage(message)`](#fn-metadatainitializersresultwithmessage)
       * [`fn withMetadata(metadata)`](#fn-metadatainitializersresultwithmetadata)
       * [`fn withReason(reason)`](#fn-metadatainitializersresultwithreason)
-      * [`fn withStatus(status)`](#fn-metadatainitializersresultwithstatus)
       * [`obj metadata.initializers.result.details`](#obj-metadatainitializersresultdetails)
         * [`fn withCauses(causes)`](#fn-metadatainitializersresultdetailswithcauses)
         * [`fn withCausesMixin(causes)`](#fn-metadatainitializersresultdetailswithcausesmixin)
@@ -487,14 +485,6 @@ withReason(reason)
 
 "A machine-readable description of why this operation is in the \"Failure\" status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it."
 
-### fn image.metadata.initializers.result.withStatus
-
-```ts
-withStatus(status)
-```
-
-"Status of the operation. One of: \"Success\" or \"Failure\". More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status"
-
 ## obj image.metadata.initializers.result.details
 
 "StatusDetails is a set of additional properties that MAY be set by the server to provide additional information about a response. The Reason field of a Status object defines what attributes will be set. Clients must ignore fields that do not match the defined type of each attribute, and should assume that any attribute may be empty, invalid, or under defined."
@@ -794,14 +784,6 @@ withReason(reason)
 ```
 
 "A machine-readable description of why this operation is in the \"Failure\" status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it."
-
-### fn metadata.initializers.result.withStatus
-
-```ts
-withStatus(status)
-```
-
-"Status of the operation. One of: \"Success\" or \"Failure\". More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status"
 
 ## obj metadata.initializers.result.details
 

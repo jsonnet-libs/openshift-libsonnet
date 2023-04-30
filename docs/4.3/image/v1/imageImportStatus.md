@@ -55,7 +55,6 @@ permalink: /4.3/image/v1/imageImportStatus/
         * [`fn withMessage(message)`](#fn-imagemetadatainitializersresultwithmessage)
         * [`fn withMetadata(metadata)`](#fn-imagemetadatainitializersresultwithmetadata)
         * [`fn withReason(reason)`](#fn-imagemetadatainitializersresultwithreason)
-        * [`fn withStatus(status)`](#fn-imagemetadatainitializersresultwithstatus)
         * [`obj image.metadata.initializers.result.details`](#obj-imagemetadatainitializersresultdetails)
           * [`fn withCauses(causes)`](#fn-imagemetadatainitializersresultdetailswithcauses)
           * [`fn withCausesMixin(causes)`](#fn-imagemetadatainitializersresultdetailswithcausesmixin)
@@ -438,14 +437,6 @@ withReason(reason)
 ```
 
 "A machine-readable description of why this operation is in the \"Failure\" status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it."
-
-### fn image.metadata.initializers.result.withStatus
-
-```ts
-withStatus(status)
-```
-
-"Status of the operation. One of: \"Success\" or \"Failure\". More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status"
 
 ## obj image.metadata.initializers.result.details
 

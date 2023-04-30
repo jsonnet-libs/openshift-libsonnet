@@ -43,7 +43,6 @@ permalink: /4.5/image/v1/imageStreamImportStatus/
         * [`fn withMessage(message)`](#fn-importmetadatainitializersresultwithmessage)
         * [`fn withMetadata(metadata)`](#fn-importmetadatainitializersresultwithmetadata)
         * [`fn withReason(reason)`](#fn-importmetadatainitializersresultwithreason)
-        * [`fn withStatus(status)`](#fn-importmetadatainitializersresultwithstatus)
         * [`obj import.metadata.initializers.result.details`](#obj-importmetadatainitializersresultdetails)
           * [`fn withCauses(causes)`](#fn-importmetadatainitializersresultdetailswithcauses)
           * [`fn withCausesMixin(causes)`](#fn-importmetadatainitializersresultdetailswithcausesmixin)
@@ -58,32 +57,11 @@ permalink: /4.5/image/v1/imageStreamImportStatus/
     * [`fn withTagsMixin(tags)`](#fn-importspecwithtagsmixin)
     * [`obj import.spec.lookupPolicy`](#obj-importspeclookuppolicy)
       * [`fn withLocal(Local)`](#fn-importspeclookuppolicywithlocal)
-  * [`obj import.status`](#obj-importstatus)
-    * [`fn withDockerImageRepository(dockerImageRepository)`](#fn-importstatuswithdockerimagerepository)
-    * [`fn withPublicDockerImageRepository(publicDockerImageRepository)`](#fn-importstatuswithpublicdockerimagerepository)
-    * [`fn withTags(tags)`](#fn-importstatuswithtags)
-    * [`fn withTagsMixin(tags)`](#fn-importstatuswithtagsmixin)
 * [`obj repository`](#obj-repository)
   * [`fn withAdditionalTags(additionalTags)`](#fn-repositorywithadditionaltags)
   * [`fn withAdditionalTagsMixin(additionalTags)`](#fn-repositorywithadditionaltagsmixin)
   * [`fn withImages(images)`](#fn-repositorywithimages)
   * [`fn withImagesMixin(images)`](#fn-repositorywithimagesmixin)
-  * [`obj repository.status`](#obj-repositorystatus)
-    * [`fn withApiVersion(apiVersion)`](#fn-repositorystatuswithapiversion)
-    * [`fn withCode(code)`](#fn-repositorystatuswithcode)
-    * [`fn withKind(kind)`](#fn-repositorystatuswithkind)
-    * [`fn withMessage(message)`](#fn-repositorystatuswithmessage)
-    * [`fn withMetadata(metadata)`](#fn-repositorystatuswithmetadata)
-    * [`fn withReason(reason)`](#fn-repositorystatuswithreason)
-    * [`fn withStatus(status)`](#fn-repositorystatuswithstatus)
-    * [`obj repository.status.details`](#obj-repositorystatusdetails)
-      * [`fn withCauses(causes)`](#fn-repositorystatusdetailswithcauses)
-      * [`fn withCausesMixin(causes)`](#fn-repositorystatusdetailswithcausesmixin)
-      * [`fn withGroup(group)`](#fn-repositorystatusdetailswithgroup)
-      * [`fn withKind(kind)`](#fn-repositorystatusdetailswithkind)
-      * [`fn withName(name)`](#fn-repositorystatusdetailswithname)
-      * [`fn withRetryAfterSeconds(retryAfterSeconds)`](#fn-repositorystatusdetailswithretryafterseconds)
-      * [`fn withUid(uid)`](#fn-repositorystatusdetailswithuid)
 
 ## Fields
 
@@ -363,14 +341,6 @@ withReason(reason)
 
 "A machine-readable description of why this operation is in the \"Failure\" status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it."
 
-### fn import.metadata.initializers.result.withStatus
-
-```ts
-withStatus(status)
-```
-
-"Status of the operation. One of: \"Success\" or \"Failure\". More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status"
-
 ## obj import.metadata.initializers.result.details
 
 "StatusDetails is a set of additional properties that MAY be set by the server to provide additional information about a response. The Reason field of a Status object defines what attributes will be set. Clients must ignore fields that do not match the defined type of each attribute, and should assume that any attribute may be empty, invalid, or under defined."
@@ -475,44 +445,6 @@ withLocal(Local)
 
 "local will change the docker short image references (like \"mysql\" or \"php:latest\") on objects in this namespace to the image ID whenever they match this image stream, instead of reaching out to a remote registry. The name will be fully qualified to an image ID if found. The tag's referencePolicy is taken into account on the replaced value. Only works within the current namespace."
 
-## obj import.status
-
-"ImageStreamStatus contains information about the state of this image stream."
-
-### fn import.status.withDockerImageRepository
-
-```ts
-withDockerImageRepository(dockerImageRepository)
-```
-
-"DockerImageRepository represents the effective location this stream may be accessed at. May be empty until the server determines where the repository is located"
-
-### fn import.status.withPublicDockerImageRepository
-
-```ts
-withPublicDockerImageRepository(publicDockerImageRepository)
-```
-
-"PublicDockerImageRepository represents the public location from where the image can be pulled outside the cluster. This field may be empty if the administrator has not exposed the integrated registry externally."
-
-### fn import.status.withTags
-
-```ts
-withTags(tags)
-```
-
-"Tags are a historical record of images associated with each tag. The first entry in the TagEvent array is the currently tagged image."
-
-### fn import.status.withTagsMixin
-
-```ts
-withTagsMixin(tags)
-```
-
-"Tags are a historical record of images associated with each tag. The first entry in the TagEvent array is the currently tagged image."
-
-**Note:** This function appends passed data to existing values
-
 ## obj repository
 
 "RepositoryImportStatus describes the result of an image repository import"
@@ -552,125 +484,3 @@ withImagesMixin(images)
 "Images is a list of images successfully retrieved by the import of the repository."
 
 **Note:** This function appends passed data to existing values
-
-## obj repository.status
-
-"Status is a return value for calls that don't return other objects."
-
-### fn repository.status.withApiVersion
-
-```ts
-withApiVersion(apiVersion)
-```
-
-"APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources"
-
-### fn repository.status.withCode
-
-```ts
-withCode(code)
-```
-
-"Suggested HTTP return code for this status, 0 if not set."
-
-### fn repository.status.withKind
-
-```ts
-withKind(kind)
-```
-
-"Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds"
-
-### fn repository.status.withMessage
-
-```ts
-withMessage(message)
-```
-
-"A human-readable description of the status of this operation."
-
-### fn repository.status.withMetadata
-
-```ts
-withMetadata(metadata)
-```
-
-"Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds"
-
-### fn repository.status.withReason
-
-```ts
-withReason(reason)
-```
-
-"A machine-readable description of why this operation is in the \"Failure\" status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it."
-
-### fn repository.status.withStatus
-
-```ts
-withStatus(status)
-```
-
-"Status of the operation. One of: \"Success\" or \"Failure\". More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status"
-
-## obj repository.status.details
-
-"StatusDetails is a set of additional properties that MAY be set by the server to provide additional information about a response. The Reason field of a Status object defines what attributes will be set. Clients must ignore fields that do not match the defined type of each attribute, and should assume that any attribute may be empty, invalid, or under defined."
-
-### fn repository.status.details.withCauses
-
-```ts
-withCauses(causes)
-```
-
-"The Causes array includes more details associated with the StatusReason failure. Not all StatusReasons may provide detailed causes."
-
-### fn repository.status.details.withCausesMixin
-
-```ts
-withCausesMixin(causes)
-```
-
-"The Causes array includes more details associated with the StatusReason failure. Not all StatusReasons may provide detailed causes."
-
-**Note:** This function appends passed data to existing values
-
-### fn repository.status.details.withGroup
-
-```ts
-withGroup(group)
-```
-
-"The group attribute of the resource associated with the status StatusReason."
-
-### fn repository.status.details.withKind
-
-```ts
-withKind(kind)
-```
-
-"The kind attribute of the resource associated with the status StatusReason. On some operations may differ from the requested resource Kind. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds"
-
-### fn repository.status.details.withName
-
-```ts
-withName(name)
-```
-
-"The name attribute of the resource associated with the status StatusReason (when there is a single name which can be described)."
-
-### fn repository.status.details.withRetryAfterSeconds
-
-```ts
-withRetryAfterSeconds(retryAfterSeconds)
-```
-
-"If specified, the time in seconds before the operation should be retried. Some errors may indicate the client must take an alternate action - for those errors this field may indicate how long to wait before taking the alternate action."
-
-### fn repository.status.details.withUid
-
-```ts
-withUid(uid)
-```
-
-"UID of the resource. (when there is a single resource which can be described). More info: http://kubernetes.io/docs/user-guide/identifiers#uids"

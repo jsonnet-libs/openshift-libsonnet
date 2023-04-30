@@ -45,8 +45,6 @@
             withMetadata(metadata): { spec+: { template+: { metadata+: { initializers+: { result+: { metadata: metadata } } } } } },
             '#withReason':: d.fn(help='"A machine-readable description of why this operation is in the \\"Failure\\" status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it."', args=[d.arg(name='reason', type=d.T.string)]),
             withReason(reason): { spec+: { template+: { metadata+: { initializers+: { result+: { reason: reason } } } } } },
-            '#withStatus':: d.fn(help='"Status of the operation. One of: \\"Success\\" or \\"Failure\\". More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status"', args=[d.arg(name='status', type=d.T.string)]),
-            withStatus(status): { spec+: { template+: { metadata+: { initializers+: { result+: { status: status } } } } } },
           },
           '#withPending':: d.fn(help='"Pending is a list of initializers that must execute in order before this object is visible. When the last pending initializer is removed, and no failing result is set, the initializers struct will be set to nil and the object is considered as initialized and visible to all clients."', args=[d.arg(name='pending', type=d.T.array)]),
           withPending(pending): { spec+: { template+: { metadata+: { initializers+: { pending: if std.isArray(v=pending) then pending else [pending] } } } } },

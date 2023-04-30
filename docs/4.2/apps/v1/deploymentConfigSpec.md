@@ -134,7 +134,6 @@ permalink: /4.2/apps/v1/deploymentConfigSpec/
         * [`fn withMessage(message)`](#fn-templatemetadatainitializersresultwithmessage)
         * [`fn withMetadata(metadata)`](#fn-templatemetadatainitializersresultwithmetadata)
         * [`fn withReason(reason)`](#fn-templatemetadatainitializersresultwithreason)
-        * [`fn withStatus(status)`](#fn-templatemetadatainitializersresultwithstatus)
         * [`obj template.metadata.initializers.result.details`](#obj-templatemetadatainitializersresultdetails)
           * [`fn withCauses(causes)`](#fn-templatemetadatainitializersresultdetailswithcauses)
           * [`fn withCausesMixin(causes)`](#fn-templatemetadatainitializersresultdetailswithcausesmixin)
@@ -1215,14 +1214,6 @@ withReason(reason)
 ```
 
 "A machine-readable description of why this operation is in the \"Failure\" status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it."
-
-### fn template.metadata.initializers.result.withStatus
-
-```ts
-withStatus(status)
-```
-
-"Status of the operation. One of: \"Success\" or \"Failure\". More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status"
 
 ## obj template.metadata.initializers.result.details
 
