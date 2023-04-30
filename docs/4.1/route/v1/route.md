@@ -39,6 +39,7 @@ permalink: /4.1/route/v1/route/
       * [`fn withMessage(message)`](#fn-metadatainitializersresultwithmessage)
       * [`fn withMetadata(metadata)`](#fn-metadatainitializersresultwithmetadata)
       * [`fn withReason(reason)`](#fn-metadatainitializersresultwithreason)
+      * [`fn withStatus(status)`](#fn-metadatainitializersresultwithstatus)
       * [`obj metadata.initializers.result.details`](#obj-metadatainitializersresultdetails)
         * [`fn withCauses(causes)`](#fn-metadatainitializersresultdetailswithcauses)
         * [`fn withCausesMixin(causes)`](#fn-metadatainitializersresultdetailswithcausesmixin)
@@ -314,6 +315,14 @@ withReason(reason)
 ```
 
 "A machine-readable description of why this operation is in the \"Failure\" status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it."
+
+### fn metadata.initializers.result.withStatus
+
+```ts
+withStatus(status)
+```
+
+"Status of the operation. One of: \"Success\" or \"Failure\". More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status"
 
 ## obj metadata.initializers.result.details
 

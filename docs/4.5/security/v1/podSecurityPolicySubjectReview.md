@@ -44,6 +44,7 @@ permalink: /4.5/security/v1/podSecurityPolicySubjectReview/
           * [`fn withMessage(message)`](#fn-spectemplatemetadatainitializersresultwithmessage)
           * [`fn withMetadata(metadata)`](#fn-spectemplatemetadatainitializersresultwithmetadata)
           * [`fn withReason(reason)`](#fn-spectemplatemetadatainitializersresultwithreason)
+          * [`fn withStatus(status)`](#fn-spectemplatemetadatainitializersresultwithstatus)
           * [`obj spec.template.metadata.initializers.result.details`](#obj-spectemplatemetadatainitializersresultdetails)
             * [`fn withCauses(causes)`](#fn-spectemplatemetadatainitializersresultdetailswithcauses)
             * [`fn withCausesMixin(causes)`](#fn-spectemplatemetadatainitializersresultdetailswithcausesmixin)
@@ -406,6 +407,14 @@ withReason(reason)
 ```
 
 "A machine-readable description of why this operation is in the \"Failure\" status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it."
+
+### fn spec.template.metadata.initializers.result.withStatus
+
+```ts
+withStatus(status)
+```
+
+"Status of the operation. One of: \"Success\" or \"Failure\". More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status"
 
 ## obj spec.template.metadata.initializers.result.details
 
